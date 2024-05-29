@@ -1,4 +1,4 @@
-function fonctionQuiPrendDutemps(number) {
+ function fonctionQuiPrendDutemps(number = 100) {
 
     let i = 0;
 
@@ -6,14 +6,34 @@ function fonctionQuiPrendDutemps(number) {
         i++
     }
 
-    console.log("Fin de fonction qui prend du temps - " + number)
+     return "Fin de fonction qui prend du temps - " + number
+}
+
+ async function fonctionQuiPrendDutemps2(number = 100) {
+
+    let i = 0;
+
+    while (i < 1_000_000_000) {
+        i++
+    }
+
+    return "Fin de fonction qui prend du temps 2 - " + number
 }
 
 function promesse() {
-    return Promise.resolve().then(
-        fonctionQuiPrendDutemps
-    )
+    //let result = fonctionQuiPrendDutemps()
+    return Promise.resolve("Promesse")
 }
+
+async function promesse2() {
+    return "Promesse 2"
+}
+
+
+console.log("Début")
+promesse().then(console.log)
+promesse2().then(console.log)
+console.log("Fin")
 
 async function getCar(number) {
 
@@ -50,9 +70,8 @@ async function getPokemon(){
         return response.json()
     }
 }
-
-console.log("Début du programme")
-//console.log(fonctionQuiPrendDutemps())
-run().then(data => console.log(data))
-run2().then(data => console.log(data))
-console.log("Fin du programme")
+//
+// console.log("Début du programme")
+// run().then(data => console.log(data))
+// run2().then(data => console.log(data))
+// console.log("Fin du programme")
