@@ -1,0 +1,21 @@
+#map {
+    height: 600px;
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 30px 10px white;
+}
+h1{
+    text-align: center;
+    font-size: 4em;
+}
+
+#position{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+body{
+    background: url("image/iss_back.jpg");
+    color: white;
+}
